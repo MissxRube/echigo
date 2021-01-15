@@ -1,0 +1,94 @@
+
+.btn-sopping{
+    color: #fff;
+    background-color: palevioletred;
+    border-color: hotpink;
+    width: 10rem;
+  
+}
+
+.btn-sopping:hover {
+    color: lightblue;
+    background-color: palevioletred;
+    border-color: hotpink;
+}
+
+.btn-sopping:focus, .btn-sopping.focus {
+    box-shadow: 0 0 0 3px rgba(200, 50, 180, 0.5);
+}
+
+.btn-sopping.disabled, .btn-sopping:disabled {
+    background-color: palevioletred;
+    border-color:  hotpink;
+}
+
+.btn-sopping:active, .btn-sopping.active,
+.show > .btn-sopping.dropdown-toggle {
+    background-color: palevioletred;
+    background-image: none;
+    border-color: hotpink;
+}
+/*seemore按鈕*/
+.seemore{
+    color: lightblue;
+    background-color: #bd2130;
+    border: 1px solid darkred;
+
+}
+
+.seemore:hover {
+    color: lightpink;
+
+
+}
+
+.seemore:focus, .seemore.focus {
+    box-shadow: 0 0 0 3px rgba(255, 0,100, 0.5);
+}
+
+
+
+.seemore:active, .seemore.active,
+.show > .seemore.dropdown-toggle {
+
+    background-image: none;
+
+}
+
+.seemore{
+
+
+}
+
+
+.btn-change{
+    color: #fff;
+    background-color: rgb(13, 13, 155);
+    border-color: rgb(133, 105, 255);
+    width: 7rem !important;
+    
+  
+}
+
+.btn-change:hover {
+    color: lightblue;
+    background-color: rgb(94, 61, 241);
+    border-color: rgb(186, 186, 248);
+    box-shadow: 0 0 0 3px rgba(100, 172, 231, 0.5);
+}
+
+.btn-change:focus, .btn-change.focus {
+    box-shadow: 0 0 0 3px rgba(100, 172, 231, 0.5);
+}
+
+.btn-change.disabled, .btn-change:disabled {
+    background-color: rgb(13, 13, 155);
+    border-color:  rgb(13, 13, 155);
+}
+
+.btn-change:active, .btn-change.active,
+.show > .btn-sopping.dropdown-toggle {
+    background-color: rgb(13, 13, 155);
+    background-image: none;
+    border-color: rgb(13, 13, 155);
+}

@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="goshoppingModelStoreContainer" CdmEntityContainer="goshoppingEntities">
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="goshoppingModel.Carts">
+        <MappingFragment StoreEntitySet="Carts">
+          <ScalarProperty Name="crete_time" ColumnName="crete_time" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="product_spec" ColumnName="product_spec" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_no" ColumnName="product_no" />
+          <ScalarProperty Name="user_no" ColumnName="user_no" />
+          <ScalarProperty Name="lot_no" ColumnName="lot_no" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorys">
+      <EntityTypeMapping TypeName="goshoppingModel.Categorys">
+        <MappingFragment StoreEntitySet="Categorys">
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="category_no" ColumnName="category_no" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="goshoppingModel.Colors">
+        <MappingFragment StoreEntitySet="Colors">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companys">
+      <EntityTypeMapping TypeName="goshoppingModel.Companys">
+        <MappingFragment StoreEntitySet="Companys">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="url_company" ColumnName="url_company" />
+          <ScalarProperty Name="email_company" ColumnName="email_company" />
+          <ScalarProperty Name="adr_company" ColumnName="adr_company" />
+          <ScalarProperty Name="tel_contact" ColumnName="tel_contact" />
+          <ScalarProperty Name="name_contact" ColumnName="name_contact" />
+          <ScalarProperty Name="name_charge" ColumnName="name_charge" />
+          <ScalarProperty Name="fax_company" ColumnName="fax_company" />
+          <ScalarProperty Name="tel_company" ColumnName="tel_company" />
+          <ScalarProperty Name="date_register" ColumnName="date_register" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="msname" ColumnName="msname" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="goshoppingModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="order_validate" ColumnName="order_validate" />
+          <ScalarProperty Name="order_closed" ColumnName="order_closed" />
+          <ScalarProperty Name="order_guid" ColumnName="order_guid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="totals" ColumnName="totals" />
+          <ScalarProperty Name="taxs" ColumnName="taxs" />
+          <ScalarProperty Name="amounts" ColumnName="amounts" />
+          <ScalarProperty Name="receive_address" ColumnName="receive_address" />
+          <ScalarProperty Name="receive_email" ColumnName="receive_email" />
+          <ScalarProperty Name="receive_name" ColumnName="receive_name" />
+          <ScalarProperty Name="shipping_no" ColumnName="shipping_no" />
+          <ScalarProperty Name="payment_no" ColumnName="payment_no" />
+          <ScalarProperty Name="user_no" ColumnName="user_no" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdersDetail">
+      <EntityTypeMapping TypeName="goshoppingModel.OrdersDetail">
+        <MappingFragment StoreEntitySet="OrdersDetail">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="product_spec" ColumnName="product_spec" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_no" ColumnName="product_no" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="vendor_no" ColumnName="vendor_no" />
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="goshoppingModel.Payments">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="goshoppingModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shippings">
+      <EntityTypeMapping TypeName="goshoppingModel.Shippings">
+        <MappingFragment StoreEntitySet="Shippings">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sizes">
+      <EntityTypeMapping TypeName="goshoppingModel.Sizes">
+        <MappingFragment StoreEntitySet="Sizes">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="goshoppingModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="goshoppingModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="isvarify" ColumnName="isvarify" />
+          <ScalarProperty Name="varify_code" ColumnName="varify_code" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="role_no" ColumnName="role_no" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="goshoppingModel.Vendors">
+        <MappingFragment StoreEntitySet="Vendors">
+          <ScalarProperty Name="isvarify" ColumnName="isvarify" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="role_no" ColumnName="role_no" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="mname" ColumnName="mname" />
+          <ScalarProperty Name="mno" ColumnName="mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="goshoppingModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ishot" ColumnName="ishot" />
+          <ScalarProperty Name="product_tag" ColumnName="product_tag" />
+          <ScalarProperty Name="deadline_start" ColumnName="deadline_start" />
+          <ScalarProperty Name="deadline_end" ColumnName="deadline_end" />
+          <ScalarProperty Name="product_content" ColumnName="product_content" />
+          <ScalarProperty Name="product_pre" ColumnName="product_pre" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="start_count" ColumnName="start_count" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="product_spec" ColumnName="product_spec" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_no" ColumnName="product_no" />
+          <ScalarProperty Name="vendor_no" ColumnName="vendor_no" />
+          <ScalarProperty Name="browse_count" ColumnName="browse_count" />
+          <ScalarProperty Name="color_name" ColumnName="color_name" />
+          <ScalarProperty Name="size_name" ColumnName="size_name" />
+          <ScalarProperty Name="issize" ColumnName="issize" />
+          <ScalarProperty Name="iscolor" ColumnName="iscolor" />
+          <ScalarProperty Name="issale" ColumnName="issale" />
+          <ScalarProperty Name="istop" ColumnName="istop" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeartDetails">
+      <EntityTypeMapping TypeName="goshoppingModel.HeartDetails">
+        <MappingFragment StoreEntitySet="HeartDetails">
+          <ScalarProperty Name="interest" ColumnName="interest" />
+          <ScalarProperty Name="flag" ColumnName="flag" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="deadline_end" ColumnName="deadline_end" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="heart_url" ColumnName="heart_url" />
+          <ScalarProperty Name="deadline_start" ColumnName="deadline_start" />
+          <ScalarProperty Name="heart_content" ColumnName="heart_content" />
+          <ScalarProperty Name="heart_name" ColumnName="heart_name" />
+          <ScalarProperty Name="heart_title" ColumnName="heart_title" />
+          <ScalarProperty Name="heart_no" ColumnName="heart_no" />
+          <ScalarProperty Name="Mname" ColumnName="Mname" />
+          <ScalarProperty Name="Mno" ColumnName="Mno" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="goshoppingModel.Contacts">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applies">
+      <EntityTypeMapping TypeName="goshoppingModel.Applies">
+        <MappingFragment StoreEntitySet="Applies">
+          <ScalarProperty Name="isvarify" ColumnName="isvarify" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="company_email" ColumnName="company_email" />
+          <ScalarProperty Name="company_tel" ColumnName="company_tel" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

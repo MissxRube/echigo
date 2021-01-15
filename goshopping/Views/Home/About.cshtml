@@ -1,0 +1,132 @@
+﻿@model goshopping.Models.Applies
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section id="list-group  " class="bg-dark">
+    <img src="~/img/shop/index.jpg" alt="Alternate Text" class="img-fluid" />
+
+    <h1 class="text-center text-white">關於我們</h1>
+    <div class="row text-white">
+        <div class="col-12 text-center row">
+            <div class="col-12 col-md-6">
+                <div class="col-12 h4 text-center border-bottom">創建理念</div>
+                <div class="col-12">
+                    <p>
+                        做最大、累積正向影響力、幫助更多人」。人不知道從哪裏來，也不知死後去哪? 死了真就這樣消失了嗎? 無知讓人害怕死亡，那活著的意義與價值是什麼?
+
+                        傳道書3章11節-- 「神造萬物，各按其時成為美好，又將永生安置在世人心中。然而神自始自終的作為， 人不能參透。我知道世人，莫強如終身喜樂行善；並且人人吃喝，在他一切勞祿中享福，這也是神的恩賜。」團隊堅持發揮自己的才能及熱情創業。
+
+                    </p>
+                    <p>
+                        Are you looking for online reading activities?  How about interactive practice activities targeting specific reading skills? At ereadingworksheets.com you can complete ereading worksheets: online reading skill quizzes about such subjects as identifying figurative language, recognizing patterns of organization or text structure, comprehending texts, determining the author’s purpose, and more.
+
+                    </p>
+                    <div class="col-12 ">
+                        <div class="row text-white">
+                            <div class=" col-8 offset-2 col-md-4 offset-md-1"><img src="~/img/shop/auth1.jfif" alt="Alternate Text" class="img-fluid  " style="border-radius:50%;" /></div>
+                            <div class=" col-12 col-md-6 picintro">
+                                <h4>總經理-一隻豹</h4><p>
+                                    她致力於推動「精實、轉型、再成長」的策略，人才並帶領團隊目標超乎傳統。專精網路運營及規劃，工序工程以及系統解決方案等領域。並於2018年獲選”美國亞裔50傑出企業家”的肯定。
+                                </p>
+                            </div>
+                            <h3 class=" col-12 text-center border-bottom">
+                                經營團隊
+                            </h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-md-6">
+                                <img src="~/img/shop/auth2.jfif" alt="Alternate Text" class="img-fluid img-circle" style="border-radius:50%;" />
+                                <h5> 執行副總經理-李好娑</h5>
+                                <p>擁有財務規劃豐富經驗。在整個職業生涯中，尹德洋先生曾先後在台灣、美國、中國和新加坡等地服務，產業含蓋消費性產品市場、資訊科技及電信業的服務經驗。</p>
+                            </div>
+                            <div class="col-6 col-md-6 ">
+                                <img src="~/img/shop/auth3.jfif" alt="Alternate Text" class="img-fluid img-circle" style="border-radius:50%;" />
+                                <h5>資深副總經理-張大郎</h5>
+                                <p>具有橫跨法律、電信等經驗，曾任職於理律法律事務所擔任律師。分別在瑞典公司愛立信台灣、中國、馬來西亞、印尼、新加坡各分公司與瑞典總公司擔任不同職務，涵蓋銷售，銷售運營，商務運營及法務等領域。</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-6 d-none d-md-block">
+                <img src="~/img/shop/team.jfif" alt="Alternate Text" class="img-fluid" />
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div class="row py-5 bg-dark" id="contact">
+    <div class="col-12 col-sm-8 offset-sm-2 mt-5 mb-2">
+        <h1 class="h3 border-bottom font-weight-bold  txtShadow text-info">合作廠商-聯絡資訊</h1>
+    </div>
+    <div class="col-12 col-sm-4 offset-sm-2">
+        @using (Html.BeginForm("About", "Home", FormMethod.Post))
+        {
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.company, htmlAttributes: new { @class = "control-label col-md-10 text-info" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.company, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.company, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.company_tel, htmlAttributes: new { @class = "control-label col-md-10 text-info" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.company_tel, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.company_tel, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.company_email, htmlAttributes: new { @class = "control-label col-md-10 text-info" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.company_email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.company_email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.remark, htmlAttributes: new { @class = "control-label col-md-10 text-info" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.remark, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.remark, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="提交" class="btn btn-info" />
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="col-12 col-sm-4 my-5 my-md-0 ">
+        <!-- 地圖響應是 -->
+        <div class="embed-responsive embed-responsive-4by3">
+            <div class="embed-responsive-item">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1ejM7GD4QUTawpehKUb552zHo3zpI9W5J" width="640" height="480"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+
+body {
+background-color:#333;
+}
+.cartlist-title {
+    color:lightcyan;
+    text-shadow:2px 2px 2px snow;
+
+}
+* {
+color:lightblue
+
+}
+
+
+.orderform {
+    height: 40%;
+    margin-top: 25%;
+    /*background-image: url(../../img/heart/04.jpg),linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+    */
+    background: url(../../img/heart/04.jpg) no-repeat top right;
+    box-shadow: 3px 2px 10px 8px grey;
+    transition: all 1s linear
+}
+    .orderform:hover {
+        background-color: rgba(0,0,0,.2);
+        box-shadow: 3px 2px 10px 8px lightgrey;
+        background: url(../../img/heart/04.jpg) no-repeat center;
+     
+    }
+@keyframes oxxo {
+    from {
+        background: url(../../img/heart/04.jpg) no-repeat top right;
+    }
+
+    to {
+        background: url(../../img/heart/04.jpg) no-repeat center;
+    }
+}

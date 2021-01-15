@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "VerifyEmail";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+@if (ViewBag.Status)
+
+{
+
+
+<div class="login-form" style="width:60%;padding-left:5%;margin-left:-20%;padding-top:10%">
+    <p class="h2 text-warning">恭喜你, 已經完成會員帳號驗證, 請重新登入享受購物!!</p>
+
+    
+    <a  href="/">
+        <img src="@Url.Content("~/img/shop/logo.jpg")" class="img-fluid " alt="" style="height:10vh; border-radius:50%;">
+    </a>
+
+</div>
+
+}
+else
+{
+    <div class="login-form" style="width:60%;padding-left:5%;margin-left:-20%;padding-top:10%">
+     
+        <p class="h2">@ViewBag.Message</p>
+
+    </div>
+}
+
+
+

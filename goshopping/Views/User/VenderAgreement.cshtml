@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "VenderAgreement";
+    Layout = "~/Views/Shared/_LayoutRegister.cshtml";
+}
+
+
+
+<div class="container">
+    <div class=" row register-bar">
+        <div class="col-12 form-bar">
+            <h2 class="h2 text-center">團主註冊同意書</h2>
+            <h4 class="h4 text-center">隱私權政策<br>歡迎您的加入!!<br></h4>
+            <h4 class="h4 text-center text-red">請注意~~審核時間為1~2天</h4>
+
+            <br>
+            <div class="h6">
+
+
+                為了讓您能夠更安心的使用本網站所提供的各項服務措施，特此向您說明資訊安全政策如下：<br>
+
+
+
+
+
+
+
+                保密協議書<br>
+                本保密協議書(以下簡稱「本協議書」)<br>
+             
+                聲明及保證<br>
+                任一方聲明並保證其有權簽署並履行本協議書。除雙方另有其他合約約定者外，揭露方對於揭
+                露之機密資訊係以其「現時存在之狀態」(AS IS)提供，且其不擔保(包括任何明示或默示之擔保)
+                其揭露之資訊無瑕疵，或是有任何通常效用、品質、或符合任何特定之用途，所有資訊(包括機
+                密資訊)使用之風險應由收受方自行承擔。<br>
+                無授權或合作關係<br>
+                (一) 除依本協議書所定之收受方使用機密資訊權限外，收受方不因收受機密資訊而取得揭露方
+                其他任何明示或默示之讓與或授權(包括任何智慧財產權之授權)。<br>
+                (二) 任一方不因本協議書之簽訂，而有任何義務應與他方或任何第三人簽訂任何契約，或進行
+                任何交易購買他方之產品或服務，或應利用機密資訊銷售任何產品；除本協議書所規範之
+                權利義務外，雙方亦不因本協議書之簽訂，成為他方之代理人或形成任何其他之法律關係。<br>
+
+
+
+
+                若您對本公司的隱私權保護宣告有任何疑問，歡迎與我們聯絡 !<br>
+            </div>
+
+
+
+
+
+            <div class="row">
+
+                <div class="text-center  col-6">
+
+                    @Html.ActionLink("會員註冊", "Register", "User", null, new { @class = "nav-link h4 btn-outline-info p-2 " })
+
+
+
+                </div>
+                <div class="text-center col-6">
+
+                    @Html.ActionLink("取消註冊", "Index", "Home", null, new { @class = "nav-link h4 btn-outline-danger p-2 " })
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,201 @@
+li{
+    list-style: none;
+}
+
+body,html{
+   
+    width: 100%;
+}
+
+
+/*公用*/
+.font-deeppink {
+    color: palevioletred !important;
+    font-size: 1.2rem !important;
+}
+
+.font-wheat{
+    color: lightblue !important;
+    font-size:1.2rem !important;
+    text-shadow:1px 1px 5px wheat;
+}
+.font-notice{
+    color: beige !important;
+    font-size:1.5rem !important;
+    text-shadow:1px 1px 5px wheat;
+}
+.bg-image {
+     /*自己的電腦圖片資料夾位置*/
+    background-image:url(../img/shop/index.jpg);
+    position: absolute; /*絕對位置*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    z-index: -999; /*設定圖片層級*/
+    overflow:hidden;
+    background-repeat:no-repeat;
+}
+
+
+
+.square {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    /*animation 參數設定 */
+    animation-name: MoveToRight; /*，需與 keyframe 名稱對應*/
+    animation-duration: 20s; /*動畫持續時間，單位為秒*/
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite; /*動畫次數，infinite 為無限次*/
+    transition: all 5s;
+}
+/*body:hover {
+    animation-name: MoveToRight;*/ /*動畫名稱，需與 keyframe 名稱對應*/
+    /*animation-duration: 20s;*/ /*動畫持續時間，單位為秒*/
+    /*animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;*/ /*動畫次數，infinite 為無限次*/
+/*}*/
+
+
+
+/* 關鍵影格(@keyframe) */
+@keyframes MoveToRight {
+    0% { top:-110%; }
+   
+    100% {top: 100%; }
+
+    
+}
+
+
+#navbar {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin: auto;
+    z-index: 999;
+}
+.nav-item:hover{
+    background-color: #2e3133 ;
+    border-radius:5%;
+  
+  
+    
+}
+.bg-trans{
+    background-color:rgba(10,10,200,.1);
+
+}
+
+.bg-trans::before{
+    content: "";
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: inherit;
+    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.1);
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: -1;
+    filter: blur(6px);
+    overflow: hidden;
+
+}
+
+.bg-transs{
+    background-color:rgba(0,71,125,.3)!important ;
+}
+.dropdown-menu-hover{
+    background-color: #2e3133 !important;
+    padding: 0 !important;
+    margin-top:0 !important;
+    right: -10% !important;
+    left: 0;
+}
+
+#navbar .dropdown-menu-hover a:hover{
+    color:palevioletred !important;
+    background-color:#2e3133;
+    border-radius: 10% !important;
+}
+.nav-dropdown {
+    background-color: #2e3133 !important;
+
+}
+/*頭部結束*/
+/*熱搜榜開始*/
+#list-group{
+    margin-top:98px ;
+
+}
+#list-group .container .row .col-md-3 a:hover {
+    color: palevioletred !important;
+    background-color: rgba(192,192,192,0.5) !important;
+
+}
+#list-group .container .introduce {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 20px wheat;
+    color: thistle;
+}
+
+/*熱搜榜結束*/
+/*倒記時器開始*/
+.time-item{
+padding: 0 15px;
+
+}
+/*倒記時器結束*/
+/*腳步開始*/
+.custom-container-width {
+    max-width: 100%;
+}
+#e-footer .bg-color {
+    background-image: linear-gradient(black,rgba(192,192,192,0.5),black);
+}
+#e-footer li{
+    color: rgb(238, 222, 160);
+    text-shadow:1px 1px 5px cornsilk;
+}
+/*腳步結尾*/
+/*
+.picintro {
+    height: 22.6%;
+    overflow: hidden;
+}
+
+    .picintro p {
+        position: relative;
+        top: -100px;
+        left: 0px;
+        color: #fff;
+        width: 90%;
+        margin: 0 auto;
+        text-align: left;
+        opacity: 0;
+        transition: all 0.5s;
+        font-size: 12px;
+        height: 0;
+    }
+
+    .picintro:hover img {
+        filter: brightness(0.35);
+        transition: all 0.5s;
+    }
+
+    .picintro:hover p {
+        opacity: 1;
+    }
+
+@media screen and (max-width: 575px) {
+    .picintro p {
+        font-size: 1rem;
+        width: 60%;
+    }
+}
+*/

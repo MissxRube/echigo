@@ -1,0 +1,240 @@
+﻿@using DevStudio.Securitys;
+@using DevStudio;
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="開團">
+    <meta name="author" content="ruby">
+    <title>echigo綜合頁面</title>
+
+
+    @*shop範本*@
+    <link href="JS/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/shop/btn-style.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/product/index-base.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/product/product.css")" />
+    @*<link rel="stylesheet" href="@Url.Content("~/Content/open/bootstrap_variables.scss")" />*@
+    <link rel="stylesheet" href="@Url.Content("~/Content/open/shpping-list.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/shop/reset.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/shop/bootstrap.css")" />
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/Heart/Heart.css")" />
+
+
+    @*<script src="@Url.Content("~/Scripts/open/Open_List.js")"></script>*@
+
+
+
+    <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/jquery-ui.theme.css")" rel="stylesheet">
+    <script src="@Url.Content("~/Scripts/shop/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/datepicker-zh-TW.js")"></script>*@
+    @*<script src="@Url.Content("~/Scripts/shop/popper.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/shop/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/shop/bootstrap.bundle.min.js")"></script>
+
+</head>
+
+
+
+
+<body class="">
+    <!--頭部開始-->
+    <header id="lk-header">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col">
+                    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-trans fixed-top">
+                        <div class="container-fluid ">
+
+                            <a class="navbar-brand" href="/">
+                                <img src="@Url.Content("~/img/shop/logo.jpg")" class="img-fluid " alt="" style="height:10vh; border-radius:50%;">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+
+                                    <li class="nav-item">
+
+                                        @Html.ActionLink("許願", "Heart_List", "Heart", null, new { @class = "nav-link font-wheat" })
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="http://localhost:8888/Product/CategoryList/A01" class="nav-link font-wheat">開團</a>
+
+
+                                    </li>
+                                    <li class="nav-item">
+
+                                        @Html.ActionLink("熱門", "Product", "Product", null, new { @class = "nav-link font-wheat" })
+                                    </li>
+
+
+                                </ul>
+
+                                <div class="form-inline my-2 my-lg-0">
+                                    @using (Html.BeginForm("Search", "Product"))
+
+                                    {
+                                        <input type="text" id="searchText" name="searchText" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+
+                                        <input type="submit" value="搜尋" class="btn btn-outline-dark  my-2 my-sm-0 font-wheat">
+
+
+                                    }
+
+
+                                </div>
+
+                                <a class="btn btn-outline-dark font-wheat ml-1 mr-1" href="/Product/CartList">跟團列表(@Cart.Counts)</a>
+
+                                <div class=" dropdown">
+                                    <a class="btn btn-outline-dark font-wheat" href="#" type="button" id=" user-btn dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        會員<i class="far fa-user"></i>
+                                    </a>
+                                    <ul id="user-item" class="dropdown-menu  dropdown-menu-hover" aria-labelledby="dropdownMenuButton">
+                                        @if (UserAccount.IsLogin)
+                                        {
+                                            <ul class="nav-item dropdown">
+                                                <li href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                                    @UserAccount.UserInfo<b class="caret"></b>
+                                                </li>
+
+                                                <li class="font-wheat  nav-item" style="background-color:#2e3133;"> @Html.ActionLink("會員專區", "Index", "Member", new { Area = "Member" }, new { @class = "nav-link" })</li>
+                                                <li class=" font-wheat  nav-item" style="background-color:#2e3133;"> @Html.ActionLink("修改密碼", "ResetPassword", "User", null, new { @class = "nav-link" })</li>
+                                                <li class=" font-wheat  nav-item" style="background-color:#2e3133;"> @Html.ActionLink("登出系統", "LogOut", "User", null, new { @class = "nav-link" })</li>
+
+
+                                            </ul>
+
+                                        }
+                                        else
+                                        {
+                                            <li class="dropdown-item font-wheat   nav-item " style="background-color:#2e3133;">
+                                                @Html.ActionLink("登入", "Login", "User", null, new { @class = "nav-link" })
+                                            </li>
+                                            <li class="dropdown-item font-wheat nav-item" style="background-color:#2e3133;">
+
+                                                @Html.ActionLink("註冊", "Agreement", "User", null, new { @class = "nav-link" })
+
+
+
+                                            </li>
+                                            <li class="dropdown-item font-wheat nav-item" style="background-color:#2e3133;">聯繫客服</li>
+                                        }
+
+
+
+
+
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <!--頭部結束-->
+        @*<div class="container">
+                <div class="pt-5 mt-5 ml-2 search-item ">
+                    <span>排序：</span>
+                    <a href="#"><span>最熱門</span></a>
+                    <span>|</span>
+                    <a href="#"><span>最新</span></a>
+                    <span>|</span>
+                    <a href="#"><span>即將過期</span></a>
+                </div>
+            </div>*@
+
+        @RenderBody()
+        <!--分頁開始-->
+        <!--分頁結束-->
+
+
+
+
+    </section>
+
+    <!--腳部開始-->
+    <footer id="e-footer">
+        <div class="container-fluid pt-5 ">
+            <div class="row ">
+                <div class="col">
+                    <div class=" bg-color ">
+
+
+                        <img src="@Url.Content("~/img/product/index4.jpg")" class="img-fluid " />
+
+                    </div>
+                    <div class="container d-block d-md-none">
+                        <div class="row ">
+                            <div class="col-12  mt-3 row ">
+                                <ul class="col-6" style="list-style:none;">
+                                    <li class='ts'>客服時間:pm8:00~17:00</li>
+                                    <li class='ts'>聯繫電話:0800-000-15472</li>
+                                    <li><a href="#" class='ts'>廠商合作</a></li>
+
+                                </ul>
+                                <ul class="col-6" style="list-style:none;">
+                                    <li class="h5 ts">友情鏈接</li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="container d-none d-md-block">
+                        <div class="row">
+                            <div class="col-md-12 row mt-3 ">
+                                <ul class="col-md-4" style="list-style:none;">
+                                    <li class='ts'>客服時間:pm8:00~17:00</li>
+                                    <li class='ts'>聯繫電話:0800-000-15472</li>
+                                    <li class="h5 ts">友情鏈接</li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                    </li>
+
+                                    <li><a href="http://localhost:8888/Home/About">廠商合作</a></li>
+                                </ul>
+
+                                <ul class="col-md-8" style="list-style:none;">
+                                    <li class="h5 ts">關於我們</li>
+                                    <li><p class="ts">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium amet, atque corporis delectus dolore dolores error fugit iure neque nesciunt officiis provident quas quos reiciendis, sunt suscipit vitae voluptatibus?</p></li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+a {
+    text-decoration:none;
+
+}
+
+td tr {
+    text-decoration: none;
+    color: white;
+}
+nav{
+    background-color: rgba(0,0,0,0.35);
+    /* 用動畫做過度 */
+    transition: all 0.5s;
+
+
+}
+
+nav:hover {
+background-color: rgba(0,0,0,0.6);
+color: mistyrose;
+
+}
+.bg-t {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+    text-shadow: 4px 4px 5px wheat;
+    text-decoration: none;
+    color:white;
+}
+
+dt, dd {
+padding:1rem;
+
+}

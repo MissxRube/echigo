@@ -1,0 +1,69 @@
+﻿@using DevStudio;
+
+@model IEnumerable<goshopping.Models.Products>
+
+@{
+    Layout = "~/Views/Shared/productLayout.cshtml";
+    ViewBag.Title = "商品搜尋";
+}
+
+<p class="CurrentPosition pt-5 mt-5">
+    <table>
+        <tr>
+            <td>
+                搜尋內容: <span class="SearchText">@ViewBag.SearchText</span>
+            </td>
+            <td style="padding-left:10px;">
+                @using (Html.BeginForm("Search", "Product"))
+                {
+                    <input type="text" id="searchText" name="searchText" />
+                    <input type="submit" value="商品搜尋" class="btn btn-info" />
+                }
+            </td>
+        </tr>
+    </table>
+</p>
+<hr />
+<div class="row ">
+    @if (Model.Count() == 0)
+    {
+        <h1 class="h1">查無商品資訊!!</h1>
+    }
+
+    @{
+        foreach (var item in Model)
+        {
+            string str_url = Shop.GetProductImage(item.product_no);
+            <div class="card-group col-md-6  ">
+                <div class="card card-hight  s-list-style  bg-dark  btn btn-outline-info ">
+                    <div class="row no-gutters "  >
+                        <div class="col-md-12 col-lg-4 bg-white searchimg-box"  >
+                            <a href="/Product/ProductDetail/@item.product_no" class="bg-white">
+                                <img class="card-img-top img-fluid bg-white" src="@str_url" alt="@item.product_name">
+                            </a>
+                        </div>
+                        <div class="col-md-12  col-lg-8 pb-5 mt-5">
+                            <div class="card-body card-body-hight">
+                                <h4 class="card-title  ">
+                                    <a href="/Product/ProductDetail/@item.product_no" class="card-title-a ">@item.product_name</a>
+                                </h4>
+                                <p class="h6">@item.product_tag</p>
+                                <h5 class="text-warning h3 text-center">$@item.price</h5>
+                                <p class="card-text">@item.product_pre</p>
+
+                                <p class='text-center'>
+                                    <a href="/Product/ProductDetail/@item.product_no" class="btn btn-info">詳細資訊</a>
+
+                                </p>
+                               
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+    }
+</div>

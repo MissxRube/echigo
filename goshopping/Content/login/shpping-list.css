@@ -1,0 +1,27 @@
+.s-list-style{
+    overflow: hidden;
+    height:8rem;
+    width: 100%;
+    border: 2px solid rgba(255,255, 255, 0.6) ;
+    box-shadow: 5px 5px 5px 5px rgba(255,255, 255, 0.6);
+    background-color: rgba(253, 129, 206, 0.9);
+}
+.s-list-style:hover{
+    background-color: rgba(245, 181, 220, 0.9);
+}
+
+.s-list-style:active{
+    border-color:  rgb(247, 24, 117);
+    box-shadow: 0 0 0 3px rgba(236, 142, 216, 0.5);
+}
+
+#e-footer >.container a  ,#e-footer >.container li{
+    color: rgb(199, 69, 69);
+    text-shadow: 1px 3px 5px rgb(19, 22, 22);
+
+}
+
+#introduce-pd >.container .style-a{
+    color: #333 !important ;
+
+}

@@ -1,0 +1,18 @@
+﻿@model goshopping.Models.HeartDetails
+
+@{
+    ViewBag.Title = "上傳圖片";
+    Layout = "~/Views/Shared/_LayoutEdit.cshtml";
+}
+
+<div>
+    <h3>帳號圖像上傳</h3>
+    <hr />
+    @using (Html.BeginForm("Upload", "HeartDetail", new { area = "Member" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="files" id="files" class="form-control" />
+        <input type="submit" value="上傳檔案" class="btn btn-primary form-control" />
+
+    }
+</div>
+

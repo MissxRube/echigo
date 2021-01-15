@@ -1,0 +1,15 @@
+﻿body {
+    background-color:#333;
+}
+.img-box {
+    border-right: 2px dashed skyblue;
+    border-left: 2px dashed skyblue;
+    box-shadow: 2px 2px 5px snow;
+}
+.img-limit {
+    max-height: 300px;
+  
+}
+    .img-limit a img {
+        height:100%;
+    }

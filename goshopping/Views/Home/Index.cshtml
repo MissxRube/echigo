@@ -1,0 +1,56 @@
+﻿@model goshopping.Models.cvmHomeIndex
+
+@{
+    ViewBag.Title = "Home Page";
+  
+}
+
+
+<section id="list-group ">
+    <div class="bg-image "><img src="~/img/shop/snow-makeself.png" class="img-fluid bg-snow square"></div>
+    <div class="container mt-xs-5 pt-xs-5 mt-sm-5 pt-5 ">
+        <div class="row ">
+            <div class="col-md-3 col-lg-4 mb-4 mt-5">
+                <span class="list-group-item list-group-item-action bg-transs font-notice text-center ">當前熱搜排行榜</span>
+                @{
+                    foreach (var item in Model.TopProducts)
+
+                    {
+                        <a href=" /Product/ProductDetail/@item.product_no" class="list-group-item list-group-item-action bg-transs font-wheat">@item.product_name</a>
+                    }
+                }
+
+            </div>
+            <div class="introduce col-md-8 mt-md-5 mt-sm-3 mb-lg-4 text-center bg-sm-dark text-white-50 ">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item text-alin">
+
+                        @Html.ActionLink("會員註冊", "Agreement", "User", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+
+                        @Html.ActionLink("會員登入", "Login", "User", null, new { @class = "nav-link  " })
+
+                    </li>
+                    <li >
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet aperiam autem, deserunt dolorem eaque eveniet expedita facere harum itaque nulla numquam, quidem rem repellendus totam. Autem facilis nisi sequi.</p>
+                        <center class="d-none d-md-block">
+                            @Html.ActionLink("shopping now", "Product", "Product", null, new { @class = "nav-link  btn btn-info mt-5 " })
+                        </center>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--熱搜結束-->
+
+        
+
+

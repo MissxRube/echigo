@@ -1,0 +1,54 @@
+body {
+     background-image:url('../../img/back/index1.jpg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: microsoft jhenghei;
+}
+
+figure {
+    width: 25rem;
+    height: 10rem;
+    overflow: hidden;
+    display: inline-block;
+    margin-top:13rem;
+    margin-left:1rem;
+}
+    figure .f-img {
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s;
+        border: 2px solid wheat;
+        filter: brightness(0.7);
+    }
+    figure:hover .f-img {
+        transform: scale(1.5,1.5);
+        filter: brightness(0.2);
+        z-index:-99;
+    }
+    figure .f-p {
+        color: antiquewhite;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 10rem;
+        transition: all 0.5s;
+        opacity: 0;
+        text-shadow: 2px 2px 4px snow;
+        letter-spacing: 1px;
+        font-size: 1.5rem;
+      
+    }
+    figure:hover .f-p {
+        margin-top: -160px;
+        position: relative;
+        z-index: 99;
+        opacity: 1;
+        
+    }
+
+    
+    
+
+ 

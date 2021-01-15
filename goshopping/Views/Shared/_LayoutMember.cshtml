@@ -1,0 +1,182 @@
+﻿@using DevStudio.Securitys;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/base/jquery-ui.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-datepicker.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-datepicker3.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/easion/css/easion.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Open+Sans:400,600,700" rel="stylesheet" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/member/btn-style.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/member/register.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/member/index-base.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/member/intro-vip.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/member/reset.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/back/index.css")" />
+  
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/umd/popper.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-datepicker.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/locales/bootstrap-datepicker.zh-TW.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/DataTables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/moment-with-locales.min.js")"></script>
+    <script src="@Url.Content("~/easion/js/easion.js")"></script>
+    <script src="@Url.Content("~/Scripts/Chart.min.js")"></script>
+    <script src="@Url.Content("~/easion/js/chart-js-config.js")"></script>
+
+
+    @RenderSection("styles", required: false)
+    @RenderSection("scripts", required: false)
+</head>
+<body class="bg-image ">
+    <div class="dash">
+        <div class="dash-nav pt-5 bg-tr-color">
+            <header>
+                <a href="#!" class="menu-toggle ">
+                    <i class="fas fa-bars text-white"></i>
+                </a>
+                @Html.ActionLink("會員專區", "Index", "Member", new { Area = "Member" }, new { @class = " member-title h1 text-white" })
+            </header>
+            <nav class="dash-nav-list ">
+                <div class="dash-nav-dropdown">
+                    <a href="#" class="dash-nav-item dash-nav-dropdown-toggle side-menu text-white">
+                        <i class="fas fa-shopping-cart"></i> 會員訂單查詢
+                    </a>
+                    <div class="dash-nav-dropdown-menu">
+                        @Html.ActionLink("未結訂單查詢", "Index", "Orders", new { Area = "Member", id = 0, code = 0 }, new { @class = "dash-nav-dropdown-item side-menu text-white" })
+                        @Html.ActionLink("歷史訂單查詢", "Index", "Orders", new { Area = "Member", id = 0, code = 1 }, new { @class = "dash-nav-dropdown-item side-menu text-white" })
+                    </div>
+                </div>
+                <div class="dash-nav-dropdown text-white">
+                    <a href="#" class="dash-nav-item dash-nav-dropdown-toggle side-menu text-white">
+                        <i class="fas fa-user"></i> 帳號資料管理
+                    </a>
+                    <div class="dash-nav-dropdown-menu ">
+                        @Html.ActionLink("帳號明細", "MemberProfile", "Member", new { Area = "Member" }, new { @class = "dash-nav-dropdown-item side-menu text-white" })
+                        @Html.ActionLink("重設密碼", "ResetPassword", "User", new { Area = "" }, new { @class = "dash-nav-dropdown-item side-menu text-white" })
+
+                    </div>
+                </div>
+
+                <div class="dash-nav-dropdown text-white">
+                    <a href="#" class="dash-nav-item dash-nav-dropdown-toggle side-menu text-white">
+                        <i class="fas fa-user"></i> 心願資料管理
+                    </a>
+                    <div class="dash-nav-dropdown-menu ">
+                        @Html.ActionLink("心願狀態", "HeartDetail", "Member", new { Area = "" }, new { @class = "dash-nav-dropdown-item side-menu text-white" })
+                    </div>
+                </div>
+
+
+               
+
+                <a href="/User/Login" class="dash-nav-item side-menu text-white">
+                    <i class="fas fa-sign-out-alt"></i> 退出會員專區
+                </a>
+                <a href="/Home/Index" class="dash-nav-item side-menu text-white">
+                    <i class="fas fa-home"></i> 返回前台首頁
+                </a>
+            </nav>
+        </div>
+    
+        <div class="dash-app text-white">
+            <header class="dash-toolbar pt-5 mt-5  bg-tr-color ">
+                <a href="#!" class="menu-toggle text-white">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <h3><span class="side-position text-white">目前位置：</span><b>@ViewBag.Title</b></h3>
+                <div class="tools ">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="@Url.Content(UserAccount.UserImageUrl)" class="user-logo-image" />
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td><span class="side-user text-white">@UserAccount.UserNo</span><br /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="side-user text-white">@UserAccount.UserName</span></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </header>
+            <main class="dash-content text-white " style="margin-top:7%;" >
+                @RenderBody()
+            </main>
+
+        </div>
+    </div>
+    <!--頭部開始-->
+    <header id="lk-header">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col">
+                    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-trans fixed-top">
+                        <div class="container-fluid ">
+                            <a class="navbar-brand" href="/">
+                                <img src="@Url.Content("~/img/shop/logo.jpg")" class="img-fluid " alt="" style="height:7vh; border-radius:50%;">
+                            </a>
+                            <button class="navbar-toggler d-none " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse d-none d-md-block" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+
+                                    <li class="nav-item">
+
+                                        @Html.ActionLink("許願", "Heart_List#hot", "Heart", null, new { @class = "nav-link font-wheat" })
+                                    </li>
+                                    <li class="nav-item">
+
+                                        @Html.ActionLink("我要開團", "VenderAgreement", "User", null, new { @class = "nav-link font-wheat" })
+                                    </li>
+                                    <li class="nav-item">
+
+                                        @Html.ActionLink("熱門", "Product", "Product", null, new { @class = "nav-link font-wheat" })
+                                    </li>
+
+                                </ul>
+
+
+                                <form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                    <a class="btn btn-outline-dark  my-2 my-sm-0 font-wheat" href="#" type="submit">
+                                        搜尋<i class="fas fa-search"></i>
+                                    </a>
+                                </form>
+
+
+                            </div>
+
+
+
+                        </div>
+                    </nav>
+                 </div>
+            </div>
+        </div>
+    </header>
+
+    <!--頭部結束-->
+
+   
+</body>
+</html>

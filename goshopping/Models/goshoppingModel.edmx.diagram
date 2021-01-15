@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d2faf90c47de41eba93a9b30933fde0b" Name="Diagram1">
+        <EntityTypeShape EntityType="goshoppingModel.Carts" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Categorys" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Colors" Width="1.5" PointX="6.5" PointY="4" />
+        <EntityTypeShape EntityType="goshoppingModel.Companys" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Orders" Width="1.5" PointX="4.75" PointY="5.75" />
+        <EntityTypeShape EntityType="goshoppingModel.OrdersDetail" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Payments" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Roles" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Shippings" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Sizes" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Status" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Users" Width="1.5" PointX="6.75" PointY="9.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Vendors" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Products" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="goshoppingModel.HeartDetails" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Contacts" Width="1.5" PointX="11.375" PointY="6.75" />
+        <EntityTypeShape EntityType="goshoppingModel.Applies" Width="1.5" PointX="11.375" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

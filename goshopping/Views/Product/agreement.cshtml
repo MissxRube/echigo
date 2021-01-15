@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "agreement";
+    Layout = "~/Views/Shared/_LayoutRegister.cshtml";
+}
+<div class="container">
+    <div class=" row register-bar">
+        <div class="col-12 form-bar">
+            <h2 class="h2 text-center">會員註冊同意書</h2>
+            <h4 class="h4 text-center">隱私權政策<br>歡迎您光臨!!</h4>
+
+            <br>
+            <div class="h6">
+
+
+                為了讓您能夠更安心的使用本網站所提供的各項服務措施，特此向您說明資訊安全政策如下：<br>
+
+
+
+                關於政策適用範圍<br>
+
+
+
+                以下的隱私權政策，適用於您在本公司活動時，所涉及的個人資料蒐集、運用與保護，但不適用於與功能連結之其他網站。<br>
+
+                凡經由本網站連結之網站，不論是否由本公司所經營，各網站均有其專屬之隱私權政策，本公司不負任何連帶責任。<br>
+
+                當您在這些網站進行活動時，關於個人資料的保護，適用各該網站的隱私權政策。<br>
+
+
+
+
+                個人資料之蒐集及運用<br>
+
+
+
+                1. 單純在的瀏覽及檔案下載行為，並不會蒐集任何有關個人的身份資料。<br>
+
+                2. 利用所提供的各項產品訂購服務，需訂購人提供姓名、聯絡電話、e-mail、通訊住址等個人最新、最真實之資料。<br>
+
+                3. 如您透過電子郵件或服務信箱反映您的意見或詢問相關業務問題時，我們會保存您的通訊記錄，僅作為與您聯絡之用。<br>
+
+                4. 本公司有義務保護各訂購人隱私，非經您本人同意不會自行修改或刪除任何個人資 料及檔案。除非符合以下情況始得為之：<br>
+
+                ・ 違反本網站規定事項。<br>
+                ・ 保護或防衛相關個人的權利或所有權。<br>
+                ・ 為保護本網站之權益。<br>
+                5. 本公司絕不會任意提供出售、交換、或出租任何您的個人資料給其他團體、個人或私人企業。但有下列情形者除外：<br>
+
+                ・ 配合司法單位合法的調查。<br>
+                ・ 配合相關職權機關依職務需要之調查或使用。<br>
+                ・ 基於善意相信揭露為法律需要，或為維護和改進網站服務而用於管理。<br>
+
+
+                隱私權保護政策之諮詢<br>
+
+
+
+                若您對本公司的隱私權保護宣告有任何疑問，歡迎與我們聯絡 !<br>
+            </div>
+
+
+
+
+
+            <div class="row">
+
+                <div class="text-center  col-6">
+
+                    @Html.ActionLink("會員註冊", "Register", "User", null, new { @class = "nav-link h4 btn-outline-info p-2 " })
+
+
+
+                </div>
+                <div class="text-center col-6">
+
+                    @Html.ActionLink("取消註冊", "Index", "Home", null, new { @class = "nav-link h4 btn-outline-danger p-2 " })
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+

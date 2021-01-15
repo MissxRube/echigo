@@ -1,0 +1,54 @@
+﻿
+@model goshopping.Models.cvmHomeIndex
+@using DevStudio;
+@using DevStudio.Securitys
+@{
+    ViewBag.Title = "Productlist";
+    Layout = "~/Views/Shared/productLayout.cshtml";
+
+}
+
+
+
+<h2>Productlist</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 pt-5 mt-5">
+            <div id="tree">
+                <div class="list-group">
+                    <div class="list-group-item active">
+                        <h6 class="tree-header">商品分類</h6>
+                    </div>
+                </div>
+            </div>
+            @{
+                var hotList = Shop.GetHotProducts();
+                if (hotList != null & hotList.Count > 0)
+                {
+                    <div id="tree-hot">
+                        <div class="list-group">
+                            <div class="list-group-item active">
+                                <h6 class="tree-header">熱門商品</h6>
+                            </div>
+                            @{
+                                foreach (var item in hotList)
+                                {
+                                    string str_url = Shop.GetProductImage(item.product_no);
+                                    <div class="list-group-item">
+                                        <a class="RemoveUnderLine" href="/Product/ProductDetail/@item.product_no">
+                                            <div class="pull-left ">
+                                                <img class="img-reponsive img-rounded" src="@str_url" alt="@item.product_name" style="width:210px;" />
+                                            </div>
+                                        </a>
+                                        <p class="mb-1">@item.product_name</p>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

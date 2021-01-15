@@ -1,0 +1,49 @@
+#introduce-input{
+    background-color: rgba(255,255,255,0.1);
+    width: 100%;
+    
+}
+
+#form-first{
+    padding-top:20px ;
+}
+
+#introduce-input #title{
+   padding-top:20px ;
+    
+    
+}
+
+ #introduce-input label{
+    font-size: 1.2rem;
+    color: #333333;
+    text-shadow: 1px 1px 5px cadetblue;
+    
+} 
+
+
+.c-bgc{
+    margin-top: 100px;
+    
+}
+
+.bgcolor{
+    background-color:pink;
+    height: 100%;
+    width: 100%;
+
+}
+
+#e-footer .shopping-bt-color{
+    background:linear-gradient(rgba(255, 255, 255, 0.2),rgba(255, 255, 255, 0.8)),url(../img/index5.jpg)  center bottom no-repeat; 
+
+}
+
+#e-footer >.container a  ,#e-footer >.container li{
+    color: rgb(199, 69, 69);
+    text-shadow: 1px 3px 5px rgb(19, 22, 22);
+
+}
+.container-bg {
+    background-image: linear-gradient(rgba(7, 7, 230,.5),rgba(233, 68, 233,.5),rgb(240, 192, 200,.5),rgba(240, 211, 158, 0.5));
+}

@@ -1,0 +1,89 @@
+li {
+    list-style: none;
+}
+
+
+/*輪播圖開始*/
+
+#e-carousel .carousel-control-prev .carousel-b:hover,
+#e-carousel .carousel-control-next .carousel-b:hover {
+    height: 80px;
+    width: 40px;
+    background-color: rgba(128, 128, 128, 0.6);
+}
+/*輪播圖結束*/
+
+/*板塊開始*/
+
+/*板塊結束*/
+#e-footer .bg-color {
+    background: linear-gradient(rgba(7, 7, 226, 0.5), rgba(175, 55, 55, 0.5)), center bottom repeat;
+    /* background-image: linear-gradient(rgba(0,0,0,.6)); */
+    position: absolute; /*絕對位置*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    z-index: -99; /*設定圖片層級*/
+    overflow: hidden;
+}
+.bga-color {
+    background: center bottom repeat;
+    background-image: repeating-linear-gradient(rgba(7, 7, 226, 0.1), rgba(175, 55, 55, 0.1)) ;
+    z-index: -99; /*設定圖片層級*/
+}
+
+#e-footer .container .ts{
+    color: rgb(238, 222, 160);
+    text-shadow:5px 5px 5px #333;
+}
+
+.text-a {
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+
+}
+
+/*種類字形裝飾*/
+
+.product-de-div {
+    height:8%;
+    width:20%;
+    border-bottom:2px dashed white;
+   
+
+}
+    .product-de-div p {
+        text-shadow:2px 2px 4px white;
+    }
+
+
+.searchimg-box {
+   height:340px;
+   overflow:hidden;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .searchimg-box {
+        
+        height: 340px;
+        overflow: hidden;
+    }
+}
+.card-title a {
+    color: skyblue;
+}
+.card-title-a {
+    color: skyblue;
+}
+    .card-title-a:hover {
+        text-decoration:none; 
+    }
+
+.card-border {
+   
+
+}

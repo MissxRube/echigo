@@ -1,0 +1,140 @@
+li{
+    list-style: none;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+}
+
+/* 文字超過五行隱藏 */
+.ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    overflow: hidden;
+};
+
+
+
+/* A標籤 */
+#introduce-pd >.container .style-a{
+    color: #333 !important ;
+
+}
+#introduce-pd .style-a:hover{
+    text-decoration :none !important ;
+}
+/* shoping-base */
+
+#e-footer .shopping-bt-color{
+    background:linear-gradient(rgba(255, 255, 255, 0.2),rgba(255, 255, 255, 0.8)),url(../img/index5.jpg)  center bottom no-repeat; 
+
+}
+
+/* com-base */
+#e-footer .com-bt-color{
+    background:linear-gradient(rgba(7, 7, 226, 0.5),rgba(175, 55, 55, 0.5)),url(../img/index3.jpg) center bottom no-repeat;
+    /* background-image: linear-gradient(rgba(0,0,0,.6)); */
+
+}
+
+.c-bgc{
+    box-shadow: 5px 5px 5px 7px rgba(94, 88, 88, 0.5);
+
+}
+
+/* heart-base */
+#e-footer .heart-bt-color{
+    background:url(../img/index4.jpg)  center bottom no-repeat; 
+}
+
+/* cus-base */
+#e-footer .cus-bt-color{
+    background:linear-gradient(rgba(51, 51, 56, 0.5),rgba(46, 67, 107, 0.5)),url(../img/index2.jpg)  center bottom no-repeat; 
+}
+.cus-bgc{
+    background:linear-gradient(rgba(235, 179, 76,.7),rgba(230, 209, 170,.7))
+
+}
+/*公用結束*/
+
+.font-deeppink{
+    color: palevioletred !important;
+    font-size:1.2rem !important;
+}
+
+.font-wheat{
+    color: lightblue !important;
+    font-size:1.2rem !important;
+    text-shadow:1px 1px 5px wheat;
+}
+.font-notice{
+    color: beige !important;
+    font-size:1.5rem !important;
+    text-shadow:1px 1px 5px wheat;
+}
+
+/* 文自顏色結束 */
+
+
+.nav-item:hover{
+    background-color: #2e3133 ;
+    border-radius:5%;
+  
+    
+}
+.bg-trans{
+    background-color:rgba(94, 94, 211, 0.8);
+
+}
+
+.bg-trans::before{
+    content: "";
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: inherit;
+    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.1);
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: -1;
+    filter: blur(6px);
+    overflow: hidden;
+
+}
+
+.bg-transs{
+    background-color:rgba(0,71,125,0.7)!important ;
+}
+.dropdown-menu-hover{
+    background-color: #2e3133 !important;
+    padding: 0 !important;
+    margin-top:0 !important;
+    right: -10% !important;
+    left: 0;
+}
+
+#navbar .dropdown-menu-hover a:hover{
+    color:palevioletred !important;
+    background-color:#2e3133;
+    border-radius: 10% !important;
+}
+.nav-dropdown {
+    background-color: #2e3133 !important;
+
+}
+/*頭部結束*/
+.container.custom-container-width {
+    max-width: 1350px;       
+}
+/* #e-footer .bg-color{
+   background-color: rgba(224, 138, 167,0.5);
+} */
+
+/* 腳步開始 */
+#e-footer a ,#e-footer li{
+    color: wheat;
+    text-shadow: 1px 1px 5px rgb(247, 233, 209);
+}

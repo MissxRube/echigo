@@ -1,0 +1,119 @@
+﻿@using goshopping.Models;
+
+@{
+    ViewBag.Title = "首頁";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row dash-row">
+        <div class="col-xl-3">
+            <div class="stats stats-dark ">
+                <h3 class="stats-title">@DateTime.Today.ToString("yyyy/MM") 總交易金額</h3>
+                <div class="stats-content">
+                    <div class="stats-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stats-data">
+                        <div class="stats-number">$@ViewBag.MonthAmount</div>
+                        <div class="stats-change">
+                            <span class="stats-percentage">@ViewBag.MonthAmountPercent</span>
+                            <span class="stats-timeframe">與前期銷售額相比</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3">
+            <div class="stats stats-dark ">
+                <h3 class="stats-title">@DateTime.Today.ToString("yyyy/MM") 總交易訂單數</h3>
+                <div class="stats-content">
+                    <div class="stats-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stats-data">
+                        <div class="stats-number">@ViewBag.MonthCount</div>
+                        <div class="stats-change">
+                            <span class="stats-percentage">@ViewBag.MonthCountPercent</span>
+                            <span class="stats-timeframe">與前期銷售額相比</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3">
+            <div class="stats stats-dark">
+                <h3 class="stats-title">@DateTime.Today.Year 年度總交易金額</h3>
+                <div class="stats-content">
+                    <div class="stats-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="stats-data">
+                        <div class="stats-number">$@ViewBag.YearAmount</div>
+                        <div class="stats-change">
+                            <span class="stats-percentage">@ViewBag.YearAmountPercent</span>
+                            <span class="stats-timeframe">與前期銷售額相比</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3">
+            <div class="stats stats-dark">
+                <h3 class="stats-title">@DateTime.Today.Year 年度總交易訂單數</h3>
+                <div class="stats-content">
+                    <div class="stats-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="stats-data">
+                        <div class="stats-number">@ViewBag.YearCount</div>
+                        <div class="stats-change">
+                            <span class="stats-percentage">@ViewBag.YearCountPercent</span>
+                            <span class="stats-timeframe">與前期銷售額相比</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card easion-card">
+                <div class="card-header ">
+                    <div class="easion-card-icon ">
+                        <i class="fas fa-chart-bar fa-2x"></i>
+                    </div>
+                    <div class="easion-card-title StatHeader">@DateTime.Today.Year 年度交易統計</div>
+                </div>
+                <div class="card-body easion-card-body-chart">
+                    <canvas id="baseYearChartjsBar"></canvas>
+                    <script >
+                         var jsBaseYearMonthName = @Html.Raw(ViewBag.BaseYearMonthName);
+                        var jsBaseYearMonthAmount = @Html.Raw(ViewBag.BaseYearMonthAmount);
+                        var ctx = document.getElementById("baseYearChartjsBar").getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: jsBaseYearMonthName,
+                                datasets: [{
+                                    label: 'Blue',
+                                    data: jsBaseYearMonthAmount,
+                                    backgroundColor: window.chartColors.info,
+                                    borderColor: window.chartColors.info,
+                                    fill: false
+                                }]
+                            },
+                            options: {
+                                legend: {
+                                    display: false
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

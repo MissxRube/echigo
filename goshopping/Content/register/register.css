@@ -1,0 +1,178 @@
+body,html{
+    width: 100%;
+    height:100% ;
+    background-color:black;
+}
+
+
+/*
+.pic-bar{
+    width: 100%;
+   
+    background-image: linear-gradient(rgb(92, 92, 235),rgb(153, 34, 153),pink,rgb(238, 231, 219));
+    position: relative;
+}*/
+
+.pic-t img{
+
+     
+    position: absolute;
+    left: 5%;
+    top: 5%;
+}
+.pic-t img{
+    width: 60%;
+}
+
+
+.pic-l img{
+
+     
+    position: absolute;
+    left: 5%;
+    top: 43%;
+}
+.pic-l img{
+    width: 22%;
+}
+
+.pic-r img{
+
+     
+    position: absolute;
+    left: 73%;
+    top: 15%;
+}
+.pic-r img{
+    width: 22%;
+}
+
+
+
+.form-bar{
+    
+    border: 3px solid rosybrown;
+    box-shadow: 3px 5px 5px rgba(12, 12, 12, 0.5);
+    z-index:999;
+    position: absolute;
+    left: 20%;
+    top:10%;
+    width: 60%;
+    height:68%;
+   
+
+}
+
+
+.form-bar::before{
+    content: "";
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: inherit;
+    box-shadow: inset 0 0 0 200px rgba(187, 190, 240, 0.6);
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: -1;
+    filter: blur(6px);
+    overflow: hidden;
+
+}
+
+
+.form-bar .form-title {
+    text-shadow:2px 2px 3px snow;
+    font-size:2rem;
+    text-align: center;
+
+}
+/*
+.form-bar .btn-r {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(49, 49, 121);
+    color: rgb(189, 217, 228);
+    font-size: 1.2rem;
+    border-radius: 10%;
+    padding-left: 1rem;
+    box-shadow: 1px 1px 5px thistle;
+    width: 15%;
+    height: 10%;
+    text-align: center;
+}
+
+.form-bar .btn-r:hover{
+    background-color: rgb(177, 203, 241);
+    color:#333;
+}*/
+
+.form-bar h2{
+    text-shadow:5px 5px 5px  snow;
+
+
+}
+.register-bar input:focus{
+    outline: none;
+    border: 2px solid rgb(177, 203, 241);
+    box-shadow:3px 3px 5px 3px cornflowerblue;
+
+}
+
+@media (min-width: 769px) {
+    .title-span {
+        font-size: 1rem;
+        margin: 0;
+    }
+    .form-bar {
+        top: 18%;
+        left: 10%;
+        width: 80%;
+        height: 100%;
+        padding-left: 0;
+    }
+
+}
+
+
+@media screen and (min-width: 575px) and (max-width:768px) {
+    .title-span {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .form-bar {
+        top: 15%;
+        left: 10%;
+        width: 80%;
+        height: 100%;
+    }
+}
+
+
+@media screen and (max-width: 575px) {
+    .title-span {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .form-bar {
+        top: 15%;
+        left: 10%;
+        width: 80%;
+        height: 85%;
+    }
+}
+
+
+.bg-image {
+background-color:rgba(193,193,193,.7)
+
+
+}
+
+
+.title-span {
+    margin-left: 35%;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 2px black;
+}

@@ -1,0 +1,87 @@
+﻿@model goshopping.Models.cvmRegister
+@{
+    ViewBag.Title = "RegisterVendor";
+    Layout = "~/Views/Shared/_LayoutRegister.cshtml";
+}
+
+<h2>RegisterVendor</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal register-bar">
+        <div class="form-bar">
+            <h4 class=" h2 text-center form-title">團主註冊</h4>
+            <span class="text-danger  title-span">**以下資料皆不可空白**</span>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group d-sm-flex justify-content-start alian-content-center">
+                @Html.LabelFor(model => model.mno, htmlAttributes: new { @class = "control-label col-md-2 h5 text-center d-none d-md-block" })
+                <div class=" col-md-8">
+                    @Html.EditorFor(model => model.mno, new { htmlAttributes = new { @class = "form-control", @PlaceHolder = "請輸入帳號" } })
+                    @Html.ValidationMessageFor(model => model.mno, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group d-sm-flex justify-content-start alian-content-center ">
+                @Html.LabelFor(model => model.mname, htmlAttributes: new { @class = "control-label col-md-2  h5 text-center d-none d-md-block" })
+
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.mname, new { htmlAttributes = new { @class = "form-control ", @PlaceHolder = "請輸入綽號" } })
+                    @Html.ValidationMessageFor(model => model.mname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group d-sm-flex justify-content-start alian-content-cente">
+                @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2  h5 text-center d-none d-md-block" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @PlaceHolder = "請輸入密碼" } })
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group d-sm-flex justify-content-start alian-content-cente">
+                @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2  h5 text-center d-none d-md-block" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @PlaceHolder = "請在確認密碼" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group d-sm-flex justify-content-start alian-content-cente">
+                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2  h5 text-center d-none d-md-block" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @PlaceHolder = "請輸入信箱" } })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group d-sm-flex justify-content-start alian-content-cente">
+                @Html.LabelFor(model => model.birthday, htmlAttributes: new { @class = "control-label col-md-2  h5 text-center d-none d-md-block" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.birthday, new { htmlAttributes = new { @class = "form-control datepicker", @PlaceHolder = "請輸入生日以格式yyyy/mm/dd" } })
+                    @Html.ValidationMessageFor(model => model.birthday, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group d-sm-flex justify-content-start alian-content-cente">
+                @Html.LabelFor(model => model.remark, htmlAttributes: new { @class = "control-label col-md-2  h5 text-center d-none d-md-block " })
+                <div class=" col-md-8">
+                    @Html.EditorFor(model => model.remark, new { htmlAttributes = new { @class = "form-control ", @PlaceHolder = "請輸入備註或建議" } })
+                    @Html.ValidationMessageFor(model => model.remark, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <div class="col-md-offset-2 col-md-12 text-center">
+                    <input type="submit" value="註冊" class="btn btn-outline-dark btn-r p-2" />
+
+                    @Html.ActionLink("取消", "Index", "Home", null, new { @class = "nav-link font-wheat btn btn-r btn-danger" })
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+}
+
+

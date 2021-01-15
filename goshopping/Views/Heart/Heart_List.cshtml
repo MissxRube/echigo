@@ -1,0 +1,184 @@
+﻿@using DevStudio.Securitys;
+@{
+    ViewBag.Title = "Heart_List";
+    Layout = "~/Views/Shared/_LayoutHeart.cshtml";
+}
+
+
+
+<section id="introduce-pd ">
+    <!-- 列表開始 -->
+
+    <h1 class="text-center pt-5 mt-5 ">
+        許願列表
+        
+    </h1>
+   
+    <div class="container">
+
+        
+
+        @* tabbable *@
+        <div class="row ">
+            @*<div class="pt-5 mt-5 ml-2 search-item  col-9">*@
+            
+            <ul class="nav nav-pills mb-4 nav-fill mt-2 " id="pills-tab" role="tablist" style="background-color:#333;">
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       id="pills-hot-tab"
+                       data-toggle="pill"
+                       href="#pills-hot"
+                       role="tab"
+                       aria-controls="pills-hot"
+                       aria-selected="true">熱門資訊</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       id="pills-over-tab"
+                       data-toggle="pill"
+                       href="#pills-over"
+                       role="tab"
+                       aria-controls="pills-over"
+                       aria-selected="false">即將過期</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       id="pills-new-tab"
+                       data-toggle="pill"
+                       href="#pills-new"
+                       role="tab"
+                       aria-controls="pills-new"
+                       aria-selected="false">最新消息</a>
+                </li>
+            </ul>
+
+            <div class="tab-content clearfix" id="pills-tabContent">
+                @*</div>*@
+                <div class="tab-pane fade show  active" id="pills-hot" role="tabpanel" aria-labelledby="pills-hot-tab">
+                    @{
+                        foreach (var item in Model.HeartNewProducts)
+                        {
+                            string str_url = string.Format("../../Images/heart/{0}/{1}.jpg", item.rowid, item.rowid);
+
+
+                            <div class="card-group col-12 ">
+                                <div class="card s-list-style ">
+                                    <div class="row no-gutters">
+                                        
+                                        <div class="col-md-8 ">
+                                            <div class="card-body card-body-hight">
+                                                <h4 class="card-title">
+                                                    <a href="#" class="h3 card-title-a">@item.heart_name</a>
+                                                </h4>
+
+                                                <span class="card-text">商品介紹：@item.heart_content</span><br>
+                                                <span class="card-text">網址：</span><a href="@item.heart_url">@item.heart_url</a><br>
+                                                <span class="card-text">優惠方案：@item.discount</span><br>
+                                                <span class="card-text">日期：@item.deadline_end </span> <span>~</span><span>@item.deadline_start</span>
+
+
+                                                @*<p>
+                                                @Html.ActionLink("我有興趣", "Open", "Product", new { id = item.heart_no }, new { @class = "btn btn-dark" })
+                                            </p>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }
+
+
+                </div>
+
+
+
+
+                <div class="tab-pane fade" id="pills-over" role="tabpanel" aria-labelledby="pills-over-tab">
+                    @{
+                        foreach (var item in Model.HeartProducts)
+                        {
+                            string str_url = string.Format("../../Images/heart/{0}/{1}.jpg", item.rowid, item.rowid);
+
+
+                            <div class="card-group col-12 ">
+                                <div class="card s-list-style ">
+                                    <div class="row no-gutters">
+                                        
+                                        <div class="col-md-8">
+                                            <div class="card-body card-body-hight">
+                                                <h4 class="card-title">
+                                                    <a href="#" class="h3 card-title-a">@item.heart_name</a>
+                                                </h4>
+
+                                                <span class="card-text">商品介紹：@item.heart_content</span><br>
+                                                <span class="card-text">網址：</span><a href="@item.heart_url">@item.heart_url</a><br>
+                                                <span class="card-text">優惠方案：@item.discount</span><br>
+                                                <span class="card-text">日期：@item.deadline_end </span> <span>~</span><span>@item.deadline_start</span>
+
+
+                                                @*<p>
+                                                @Html.ActionLink("我要開團", "Open", "Product", new { id = item.heart_no }, new { @class = "btn btn-dark" })
+                                            </p>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }
+
+
+                </div>
+
+                <div class="tab-pane fade mb-3" id="pills-new" role="tabpanel" aria-labelledby="pills-new-tab">
+
+                    @{
+                        foreach (var item in Model.HeartNewProducts)
+                        {
+                            string str_url = string.Format("../../Images/heart/{0}/{1}.jpg", item.rowid, item.rowid);
+
+
+                            <div class="card-group col-12 ">
+                                <div class="card s-list-style ">
+                                    <div class="row no-gutters">
+                                       
+                                        <div class="col-md-8">
+                                            <div class="card-body card-body-hight">
+                                                <h4 class="card-title">
+                                                    <a href="#" class="h3 card-title-a">@item.heart_name</a>
+                                                </h4>
+
+                                                <span class="card-text">商品介紹：@item.heart_content</span><br>
+                                                <span class="card-text">網址：</span><a href="@item.heart_url">@item.heart_url</a><br>
+                                                <span class="card-text">優惠方案：@item.discount</span><br>
+                                                <span class="card-text">日期：@item.deadline_end </span> <span>~</span><span>@item.deadline_start</span>
+
+
+                                                @*<p>
+                                                @Html.ActionLink("我要開團", "Open", "Product", new { id = item.heart_no }, new { @class = "btn btn-dark" })
+                                            </p>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- 列表結束 -->
+<!--分頁開始-->

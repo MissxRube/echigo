@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/shop/reset.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/shop/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/back/index.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/back/main.css")" />
+    <script src="@Url.Content("~/Scripts/shop/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/shop/popper.js")"></script>
+    <script src="@Url.Content("~/Scripts/shop/bootstrap.js")"></script>
+
+
+
+
+</head>
+<body class="bg-dark">
+    <!-- 導覽列開始 -->
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top ">
+        <h1 class="navbar-brand">echigo</h1>
+        <button data-toggle="collapse" data-target='#submenu' class='navbar-toggler'><span class="navbar-toggler-icon"></span></button>
+        <div class='navbar-collapse collapse justify-content-end ' id='submenu'>
+            <ul class='navbar-nav'>
+                <li class="nav-item"><a href="index.html" class="nav-link ">後台首頁</a> </li>
+                <li class="nav-item"><a href="about.html" class="nav-link ">顧客留言</a></li>
+                <li class="nav-item"><a href="intro.html" class="nav-link">會員資料</a></li>
+                <li class="nav-item"><a href="intro.html" class="nav-link">審核資料</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- 導覽列結束 -->
+
+
+
+    @RenderBody()
+
+</body>
+</html>

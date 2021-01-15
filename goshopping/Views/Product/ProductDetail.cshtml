@@ -1,0 +1,174 @@
+﻿@using DevStudio;
+@using goshopping.Models;
+@model goshopping.Models.Products
+
+@{
+    ViewBag.Title = "商品明細";
+    Layout = "~/Views/Shared/productLayout.cshtml";
+    <link href="@Url.Content("~/shop/css/product-detail.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/shop/js/product-detail.js")"></script>
+    string proc_photo = "";
+    string proc_photodetail = "";
+    if (Model != null)
+    {
+        proc_photo = string.Format("../../Images/product/{0}/{1}.jpg", Model.product_no, Model.product_no);
+        string show = "";
+        for (int i = 1; i <= 3; i++)
+        {
+            proc_photodetail = string.Format("../../Images/product/{0}/{1}-0{2}.jpg", Model.product_no, Model.product_no, i);
+            show += proc_photodetail;
+
+
+        }
+
+    }
+    string categoty_no = ViewBag.CategoryNo;
+    string categoty_name = ViewBag.CategoryName;
+}
+
+
+
+
+
+<div class="container">
+    <p class="pt-5 mt-5">
+        目前位置:
+        @Html.ActionLink("首頁", "Index", "Home")
+        /
+        @Html.ActionLink(categoty_name, "CategoryList", "Product", new { id = categoty_no }, null)
+        /
+        @Model.product_no
+    </p>
+    <hr />
+
+   
+    <div class="row">
+        <div class="col-12 col-md-4 item-photo">
+            <div class="easyzoom easyzoom--overlay col-12">
+                <a href="@proc_photo" class="cloud-zoom d-none d-md-block" rel="adjustX: 10, adjustY:-10">
+                    <img class="mainimage" src="@proc_photo" style="max-width: 100%;width: 400px;z-index:6;" />
+                </a>
+
+                <a href="@proc_photo" class="d-block d-md-none"   >
+                    <img class="mainimage" src="@proc_photo"  />
+                </a>
+
+            </div>
+        </div>
+        <div class="col-12 col-md-8" >
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <input type="hidden" id="product_no" name="product_no" value="@Model.product_no" />
+                <h3>@Model.product_name</h3>
+                <h5 style="color: #337ab7">@Model.product_spec</h5>
+                <div class="title-price product-detail-label pl-3" style="color:brown;">商品編號：@Model.product_no</div>
+                <div class="title-price product-detail-label pl-3" style="color:skyblue;">商品售價：<span class="product-sale-price h1 text-danger pl-3">@Model.price</span></div>
+
+                List<string> color_list = (List<string>)ViewBag.ColorList;
+                List<string> size_list = (List<string>)ViewBag.SizeList;
+                if (color_list != null && color_list.Count > 0)
+                {
+                    <div class="section bg-dark">
+                        <div>
+                            <span class="product-detail-label control-label col-2 align-items-center">商品顏色：</span>
+                            <select id="color_no" name="color_no" class="form-control product-detail-select text-white bg-dark btn-outline-info">
+                                @foreach (var item in color_list)
+                                {
+                                    <option>@item</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    @Html.Hidden("color_no");
+                }
+                if (size_list != null && size_list.Count > 0)
+                {
+                    <div class="section bg-dark ">
+                        <div>
+                            <span class="product-detail-label control-label col-2 align-items-center">商品尺寸：</span>
+                            <select id="size_no" name="size_no" class="form-control product-detail-select text-white bg-dark btn-outline-info">
+                                @foreach (var item in size_list)
+                                {
+                                    <option>@item</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    @Html.Hidden("size_no");
+                }
+                <div class="section bg-dark " style="padding-bottom: 20px;padding-top:10px; ">
+                    <h6 class="title-attr product-detail-label col-2 align-items-center pb-3 d-inline-block" style="color:skyblue;">購買數量：</h6>
+                    <div class="pl-3 ">
+                        <div class="btn-minus btn-outline-info" style="float:right"><span class="fa fa-minus"></span></div>
+                        <input id="qty" name="qty" value="1" style="width:100px;max-width:100px;" class=" bg-dark " />
+                        <div class="btn-plus mr-5 text-center btn-outline-info" style="float:left"><span class="fa fa-plus"></span></div>
+
+
+                    </div>
+
+
+                </div>
+                <div class="" style=" margin-left:50%;">
+                    <input type="submit" value="加入團購" class="btn btn-sopping " />
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="menu-items">
+                <li class="active">商品資訊</li>
+            </ul>
+            <div class="col-12" style="border-top: 1px solid silver">
+                <div class="col-12 ">@Model.product_content</div>
+                <div class="col-12 text-center">
+                    @*@if (Model != null)
+                    {
+                        var path = Path.Combine(Server.MapPath("~/Images/product"), Shop.ProductNo);
+                        DirectoryInfo dir = new DirectoryInfo(path);
+                        FileInfo[] fInfo = dir.GetFiles();
+                        int n = 0;
+                        foreach (FileInfo result in fInfo)
+                        {
+                            string show = "";
+                            n++;
+                            show += "<a href= ../../Images/product/" + Shop.ProductNo + "/" + result.Name + "'target='_blank'><img src='../../Images/product/" + Shop.ProductNo + "/" + result.Name + "'width='90' height ='60' border='0' ></a>";
+                            <img class="mainimage" src="@show" />
+
+                        }
+
+                    }*@
+                    @for (int i = 1; i <= 3; i++)
+                    {
+                        string show = "";
+
+                        show += string.Format(" ../../Images/product/{0}/{1}-0{2}.jpg", @Model.product_no, @Model.product_no, i);
+
+                        <img class="mainimage img-fluid" src="@show "  />
+                    }
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/JavaScript" src="http://www.professorcloud.com/js/cloud-zoom.1.0.2.js"></script>
+<link href="http://www.professorcloud.com/styles/cloud-zoom.css" rel="stylesheet" type="text/css">
+
+<script>
+    $(document).ready(function () {
+        var $easyzoom = $('.easyzoom').easyZoom();
+    });
+</script>

@@ -1,0 +1,292 @@
+﻿@model goshopping.Models.cvmHomeIndex
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/productLayout.cshtml";
+    int int_index = 0;
+    string activeClass = "active";
+}
+
+
+
+
+
+
+<!--輪播開始-->
+
+<section id="e-carousel">
+    <div class="container">
+        <div class="row d-flex">
+            <div id="carouselExampleIndicators" class="carousel slide my-4  mt-5 pt-5" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    @if (Model.CarouseImages != null)
+                    {
+                        foreach (string fileName in Model.CarouseImages)
+                        {
+                            <li data-target="#carouselExampleIndicators" data-slide-to="@int_index" class="@activeClass"></li>
+                            int_index++;
+                            activeClass = "";
+                        }
+                    }
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    @if (Model.CarouseImages != null)
+                    {
+                        activeClass = "active";
+                        foreach (string fileName in Model.CarouseImages)
+                        {
+                            <div class="carousel-item @activeClass">
+                                <img class="d-block img-fluid" src="@Url.Content(fileName)" alt="CarouseImage">
+                            </div>
+                            activeClass = "";
+                        }
+                    }
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon carousel-b" aria-hidden="true"></span>
+                    <span class="sr-only carousel-b">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon carousel-b" aria-hidden="true"></span>
+                    <span class="sr-only carousel-b">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <ul class="nav nav-pills mb-4 nav-fill mt-2" id="pills-tab" role="tablist" style="background-color:#333;">
+            <li class="nav-item">
+                <a class="nav-link active"
+                   id="pills-home-tab"
+                   data-toggle="pill"
+                   href="#pills-home"
+                   role="tab"
+                   aria-controls="pills-home"
+                   aria-selected="true">熱門資訊</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   id="pills-profile-tab"
+                   data-toggle="pill"
+                   href="#pills-profile"
+                   role="tab"
+                   aria-controls="pills-profile"
+                   aria-selected="false">開團消息</a>
+            </li>
+
+        </ul>
+
+        <div class="tab-content clearfix" id="pills-tabContent">
+            <div class="tab-pane fade show active " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="container">
+                    <div class="row ">
+
+                        <div class="col-12 text-white text-center product-de-div">
+                            <p class="h3 ">美妝產品類</p>
+                            <img src="../img/shop/line01.png" alt="Alternate Text" />
+
+
+                        </div>
+                    </div>
+                    <div class="row col-12 pt-5">
+                        @{
+                            foreach (var item in Model.GetProductsBeaut)
+                            {
+                                string str_url = string.Format("../../Images/product/{0}/{1}.jpg", item.product_no, item.product_no);
+                                <div class="card-group col-md-6">
+                                    <div class="card card-hight  s-list-style ">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <a href="/Product/ProductDetail/@item.product_no">
+                                                    <img class="card-img-top " src="@str_url" alt="@item.product_name">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body card-body-hight">
+                                                    <h4 class="card-title " >
+                                                        <a href="/Product/ProductDetail/@item.product_no" class="card-title-a ">@item.product_name</a>
+                                                    </h4>
+                                                    <p class="h6">@item.product_tag</p>
+                                                    <h5 class="text-warning h3 text-center">$@item.price</h5>
+                                                    <p class="card-text">@item.product_pre</p>
+
+                                                    <p class='text-center'>
+                                                        <a href="/Product/ProductDetail/@item.product_no" class="btn btn-info">詳細資訊</a>
+
+                                                    </p>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            }
+                        }
+                    </div>
+
+                    <div class="row pt-5">
+
+                        <div class="col-12 text-white text-center product-de-div">
+                            <p class="h3 ">生活用品類</p>
+                            <img src="../img/shop/line01.png" alt="Alternate Text" />
+
+
+                        </div>
+                    </div>
+                    <div class="row col-12 pt-5">
+                        @{
+                            foreach (var item in Model.GetProductsLife)
+                            {
+                                string str_url = string.Format("../../Images/product/{0}/{1}.jpg", item.product_no, item.product_no);
+                                <div class="card-group col-md-6">
+                                    <div class="card card-hight  s-list-style ">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <a href="/Product/ProductDetail/@item.product_no">
+                                                    <img class="card-img-top " src="@str_url" alt="@item.product_name">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body card-body-hight">
+                                                    <h4 class="card-title  ">
+                                                        <a href="/Product/ProductDetail/@item.product_no" class="card-title-a ">@item.product_name</a>
+                                                    </h4>
+                                                    <p class="h6">@item.product_tag</p>
+                                                    <h5 class="text-warning h3 text-center">$@item.price</h5>
+                                                    <p class="card-text">@item.product_pre</p>
+
+                                                    <p class='text-center'>
+                                                        <a href="/Product/ProductDetail/@item.product_no" class="btn btn-info">詳細資訊</a>
+
+                                                    </p>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            }
+                        }
+                    </div>
+
+                    <div class="row pt-5">
+
+                        <div class="col-12 text-white text-center product-de-div">
+                            <p class="h3 ">服飾配件類</p>
+                            <img src="../img/shop/line01.png" alt="Alternate Text" />
+
+
+                        </div>
+                    </div>
+                    <div class="row col-12 pt-5">
+                        @{
+                            foreach (var item in Model.GetProductsColth)
+                            {
+                                string str_url = string.Format("../../Images/product/{0}/{1}.jpg", item.product_no, item.product_no);
+                                <div class="card-group col-md-6">
+                                    <div class="card card-hight  s-list-style ">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <a href="/Product/ProductDetail/@item.product_no">
+                                                    <img class="card-img-top " src="@str_url" alt="@item.product_name">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body card-body-hight">
+                                                    <h4 class="card-title  ">
+                                                        <a href="/Product/ProductDetail/@item.product_no" class="card-title-a ">@item.product_name</a>
+                                                    </h4>
+                                                    <p class="h6">@item.product_tag</p>
+                                                    <h5 class="text-warning h3 text-center">$@item.price</h5>
+                                                    <p class="card-text">@item.product_pre</p>
+
+                                                    <p class='text-center'>
+                                                        <a href="/Product/ProductDetail/@item.product_no" class="btn btn-info">詳細資訊</a>
+
+                                                    </p>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            }
+                        }
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade show " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="container">
+                    <div class="row pt-3 pb-5">
+
+                        <div class="col-12 text-white text-center product-de-div">
+                            <p class="h3 ">全部開團</p>
+                            <img src="../img/shop/line01.png" alt="Alternate Text" />
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row col-md-12">
+
+                        @{
+                            foreach (var item in Model.GetProductsItem)
+                            {
+                                string str_url = string.Format("../../Images/product/{0}/{1}.jpg", item.product_no, item.product_no);
+                                <div class="card-group col-md-6">
+                                    <div class="card card-hight  item-list-style ">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <a href="/Product/ProductDetail/@item.product_no">
+                                                    <img class="card-img-top " src="@str_url" alt="@item.product_name">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body card-body-hight">
+                                                    <h4 class="card-title  ">
+                                                        <a href="/Product/ProductDetail/@item.product_no" class="card-title-a ">@item.product_name</a>
+                                                    </h4>
+                                                    <p class="h6">@item.product_tag</p>
+                                                    <h5 class="text-warning h3 text-center">$@item.price</h5>
+                                                    <p class="card-text">@item.product_pre</p>
+
+                                                    <p class='text-center'>
+                                                        <a href="/Product/ProductDetail/@item.product_no" class="btn btn-sopping">詳細資訊</a>
+
+                                                    </p>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
