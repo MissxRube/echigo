@@ -1,5 +1,5 @@
 ## echigo團購網購商城:主要有購買及發表團購功能
-----
+
 
 ### 主要使用語言：
 javascript、css、html、boostrape、C#、ASP.NET
